@@ -52,6 +52,7 @@ import com.helger.genetic.tsp.populationcreator.TSPPopulationCreatorRandom;
 import com.helger.genetic.utils.decisionmaker.AbstractDecisionMakerRandom;
 import com.helger.genetic.utils.decisionmaker.DecisionMakerPercentage;
 import com.helger.genetic.utils.decisionmaker.DecisionMakerPercentageDecreasing;
+import com.helger.math.matrix.Matrix;
 import com.phloc.commons.CGlobal;
 import com.phloc.commons.GlobalDebug;
 import com.phloc.commons.annotations.Nonempty;
@@ -59,7 +60,6 @@ import com.phloc.commons.locale.LocaleCache;
 import com.phloc.commons.math.MathHelper;
 import com.phloc.commons.string.StringHelper;
 import com.phloc.commons.timing.StopWatch;
-import com.phloc.math.matrix.Matrix;
 
 public class TSPRunner
 {
@@ -157,7 +157,7 @@ public class TSPRunner
 
   /**
    * Run the TSP with the given matrix
-   * 
+   *
    * @param aDistances
    *        Symmetric distance matrix
    * @param dOptimumDistance

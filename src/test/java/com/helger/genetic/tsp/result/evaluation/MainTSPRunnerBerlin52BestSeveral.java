@@ -50,11 +50,11 @@ import com.helger.genetic.tsp.populationcreator.TSPPopulationCreatorRandom;
 import com.helger.genetic.utils.decisionmaker.DecisionMakerPercentage;
 import com.helger.genetic.utils.random.RandomGenerator;
 import com.helger.genetic.utils.random.RandomGeneratorRandom;
+import com.helger.math.matrix.Matrix;
 import com.phloc.commons.CGlobal;
 import com.phloc.commons.GlobalDebug;
 import com.phloc.commons.io.file.FileUtils;
 import com.phloc.commons.io.resource.ClassPathResource;
-import com.phloc.math.matrix.Matrix;
 import com.phloc.poi.excel.EExcelVersion;
 
 public final class MainTSPRunnerBerlin52BestSeveral extends AbstractFileBasedTSPRunner

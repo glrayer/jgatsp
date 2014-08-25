@@ -28,13 +28,13 @@ import com.helger.genetic.model.IGene;
 import com.helger.genetic.mutation.AbstractMutation;
 import com.helger.genetic.utils.decisionmaker.IDecisionMaker;
 import com.helger.genetic.utils.random.RandomGenerator;
+import com.helger.math.matrix.Matrix;
 import com.phloc.commons.annotations.Nonempty;
 import com.phloc.commons.math.MathHelper;
-import com.phloc.math.matrix.Matrix;
 
 /**
  * Mutation that sorts a sub-sequence with the greedy TSP algorithm:
- * 
+ *
  * @author Philip Helger
  */
 public class TSPMutationGreedy extends AbstractMutation

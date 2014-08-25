@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.model.IFitnessFunction;
-import com.phloc.math.matrix.Matrix;
+import com.helger.math.matrix.Matrix;
 
 public final class TSPFitnessFunction implements IFitnessFunction
 {
@@ -36,7 +36,7 @@ public final class TSPFitnessFunction implements IFitnessFunction
 
   /**
    * Full ctor
-   * 
+   *
    * @param aDistances
    *        Distance matrix
    * @param dScalingFactor
@@ -83,7 +83,7 @@ public final class TSPFitnessFunction implements IFitnessFunction
 
   /**
    * Get the fitness from the distance
-   * 
+   *
    * @param dDistance
    *        Distance. Always &ge; 0.
    * @return The fitness - the higher the better

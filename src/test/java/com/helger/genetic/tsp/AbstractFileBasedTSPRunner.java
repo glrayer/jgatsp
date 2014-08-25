@@ -24,13 +24,13 @@ import java.util.Map;
 
 import javax.annotation.Nonnull;
 
+import com.helger.math.matrix.Matrix;
 import com.phloc.commons.CGlobal;
 import com.phloc.commons.charset.CCharset;
 import com.phloc.commons.io.IReadableResource;
 import com.phloc.commons.io.streams.StreamUtils;
 import com.phloc.commons.regex.RegExHelper;
 import com.phloc.commons.string.StringParser;
-import com.phloc.math.matrix.Matrix;
 
 public abstract class AbstractFileBasedTSPRunner
 {

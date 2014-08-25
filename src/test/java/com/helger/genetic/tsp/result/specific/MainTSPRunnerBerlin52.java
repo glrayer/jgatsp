@@ -41,15 +41,15 @@ import com.helger.genetic.tsp.populationcreator.TSPPopulationCreatorRandom;
 import com.helger.genetic.utils.decisionmaker.DecisionMakerPercentage;
 import com.helger.genetic.utils.random.RandomGenerator;
 import com.helger.genetic.utils.random.RandomGeneratorRandom;
+import com.helger.math.matrix.Matrix;
 import com.phloc.commons.CGlobal;
 import com.phloc.commons.io.resource.ClassPathResource;
-import com.phloc.math.matrix.Matrix;
 
 public final class MainTSPRunnerBerlin52 extends AbstractFileBasedTSPRunner
 {
   /**
    * Best so far:
-   * 
+   *
    * <pre>
    * CrossoverPartialReverse:
    * PopulationSize=31; SelectorAllSortedBest(2); C:new DecisionMakerPercentage (0.0); M:new DecisionMakerPercentage (75.8) ==> nMinGen=353
@@ -70,7 +70,7 @@ public final class MainTSPRunnerBerlin52 extends AbstractFileBasedTSPRunner
    * PopulationSize=31; SelectorAllSortedBest(3); C:new DecisionMakerPercentage (3.2); M:new DecisionMakerPercentage (79.2) ==> nMinGen=272
    * PopulationSize=31; SelectorAllSortedBest(3); C:new DecisionMakerPercentage (3.3); M:new DecisionMakerPercentage (79.2) ==> nMinGen=272
    * </pre>
-   * 
+   *
    * <pre>
    * CrossoverEdgeRecombination:
    * PopulationSize=18; SelectorAllSortedBest(2); C:new DecisionMakerPercentage (0.0); M:new DecisionMakerPercentage (61.0) ==> nMinGen=451

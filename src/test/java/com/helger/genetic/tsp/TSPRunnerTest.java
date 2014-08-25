@@ -25,12 +25,12 @@ import org.junit.Test;
 
 import com.helger.genetic.tsp.model.TSPFitnessFunction;
 import com.helger.genetic.tsp.mutation.TSPMutationGreedy;
+import com.helger.math.graph.IGraph;
+import com.helger.math.graph.IGraphNode;
+import com.helger.math.graph.IGraphRelation;
+import com.helger.math.graph.simple.SimpleGraph;
+import com.helger.math.matrix.Matrix;
 import com.phloc.commons.collections.ContainerHelper;
-import com.phloc.math.graph.IGraph;
-import com.phloc.math.graph.IGraphNode;
-import com.phloc.math.graph.IGraphRelation;
-import com.phloc.math.graph.simple.SimpleGraph;
-import com.phloc.math.matrix.Matrix;
 
 public final class TSPRunnerTest
 {

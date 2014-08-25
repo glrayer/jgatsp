@@ -23,9 +23,9 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.helger.genetic.tsp.AbstractFileBasedTSPRunner;
+import com.helger.math.matrix.Matrix;
 import com.phloc.commons.io.resource.ClassPathResource;
 import com.phloc.commons.timing.StopWatch;
-import com.phloc.math.matrix.Matrix;
 
 public final class TSPMutationGreedyTest
 {
