@@ -25,11 +25,11 @@ import java.util.List;
 
 import org.junit.Test;
 
+import com.helger.commons.collections.ContainerHelper;
 import com.helger.genetic.model.Chromosome;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.model.MockFitnessFunction;
 import com.helger.genetic.utils.decisionmaker.DecisionMakerAlways;
-import com.phloc.commons.collections.ContainerHelper;
 
 /**
  * Test class for class {@link CrossoverEdgeRecombination}.

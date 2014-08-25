@@ -19,9 +19,9 @@ package com.helger.genetic.continuation;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.model.IPopulation;
-import com.phloc.commons.annotations.OverrideOnDemand;
 
 public abstract class AbstractContinuation implements IContinuation
 {

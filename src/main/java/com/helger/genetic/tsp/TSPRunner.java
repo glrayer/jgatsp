@@ -26,6 +26,13 @@ import javax.annotation.Nonnull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.helger.commons.CGlobal;
+import com.helger.commons.GlobalDebug;
+import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.locale.LocaleCache;
+import com.helger.commons.math.MathHelper;
+import com.helger.commons.string.StringHelper;
+import com.helger.commons.timing.StopWatch;
 import com.helger.genetic.GARunner;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.ICrossover;
@@ -53,13 +60,6 @@ import com.helger.genetic.utils.decisionmaker.AbstractDecisionMakerRandom;
 import com.helger.genetic.utils.decisionmaker.DecisionMakerPercentage;
 import com.helger.genetic.utils.decisionmaker.DecisionMakerPercentageDecreasing;
 import com.helger.math.matrix.Matrix;
-import com.phloc.commons.CGlobal;
-import com.phloc.commons.GlobalDebug;
-import com.phloc.commons.annotations.Nonempty;
-import com.phloc.commons.locale.LocaleCache;
-import com.phloc.commons.math.MathHelper;
-import com.phloc.commons.string.StringHelper;
-import com.phloc.commons.timing.StopWatch;
 
 public class TSPRunner
 {

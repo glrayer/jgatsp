@@ -18,11 +18,11 @@ package com.helger.genetic.crossover;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotations.UnsupportedOperation;
 import com.helger.genetic.model.Chromosome;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.utils.decisionmaker.IDecisionMaker;
-import com.phloc.commons.annotations.Nonempty;
-import com.phloc.commons.annotations.UnsupportedOperation;
 
 /**
  * Crossover cycle Operator. <a

@@ -19,7 +19,7 @@ package com.helger.genetic.utils.random;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
-import com.phloc.commons.annotations.Nonempty;
+import com.helger.commons.annotations.Nonempty;
 
 public interface IRandomGenerator
 {

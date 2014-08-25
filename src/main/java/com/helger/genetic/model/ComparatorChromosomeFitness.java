@@ -18,8 +18,8 @@ package com.helger.genetic.model;
 
 import javax.annotation.Nonnull;
 
-import com.phloc.commons.compare.AbstractNumericComparator;
-import com.phloc.commons.compare.ESortOrder;
+import com.helger.commons.compare.AbstractNumericComparator;
+import com.helger.commons.compare.ESortOrder;
 
 public final class ComparatorChromosomeFitness extends AbstractNumericComparator <IChromosome>
 {

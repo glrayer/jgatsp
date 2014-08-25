@@ -22,10 +22,10 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.compare.ESortOrder;
 import com.helger.genetic.model.ComparatorChromosomeFitness;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.utils.random.RandomGenerator;
-import com.phloc.commons.compare.ESortOrder;
 
 /**
  * Cross over selector:

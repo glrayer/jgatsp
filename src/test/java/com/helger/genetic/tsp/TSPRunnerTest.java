@@ -23,6 +23,7 @@ import javax.annotation.Nonnull;
 
 import org.junit.Test;
 
+import com.helger.commons.collections.ContainerHelper;
 import com.helger.genetic.tsp.model.TSPFitnessFunction;
 import com.helger.genetic.tsp.mutation.TSPMutationGreedy;
 import com.helger.math.graph.IGraph;
@@ -30,7 +31,6 @@ import com.helger.math.graph.IGraphNode;
 import com.helger.math.graph.IGraphRelation;
 import com.helger.math.graph.simple.SimpleGraph;
 import com.helger.math.matrix.Matrix;
-import com.phloc.commons.collections.ContainerHelper;
 
 public final class TSPRunnerTest
 {

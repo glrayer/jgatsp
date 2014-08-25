@@ -21,10 +21,10 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
+import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.genetic.IEventHandler;
 import com.helger.genetic.ISelector;
 import com.helger.genetic.model.IChromosome;
-import com.phloc.commons.annotations.OverrideOnDemand;
 
 public class SelectorAlternating extends AbstractSelector
 {

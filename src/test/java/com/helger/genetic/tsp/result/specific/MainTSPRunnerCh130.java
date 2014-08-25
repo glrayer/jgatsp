@@ -18,6 +18,8 @@ package com.helger.genetic.tsp.result.specific;
 
 import java.util.Random;
 
+import com.helger.commons.CGlobal;
+import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.ICrossover;
 import com.helger.genetic.IEventHandler;
@@ -42,8 +44,6 @@ import com.helger.genetic.utils.decisionmaker.DecisionMakerPercentage;
 import com.helger.genetic.utils.random.RandomGenerator;
 import com.helger.genetic.utils.random.RandomGeneratorRandom;
 import com.helger.math.matrix.Matrix;
-import com.phloc.commons.CGlobal;
-import com.phloc.commons.io.resource.ClassPathResource;
 
 /**
  * Best so far:

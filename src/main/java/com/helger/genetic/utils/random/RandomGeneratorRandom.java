@@ -22,7 +22,7 @@ import java.util.Random;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
-import com.phloc.commons.annotations.Nonempty;
+import com.helger.commons.annotations.Nonempty;
 
 /**
  * Implementation of {@link IRandomGenerator} based on {@link java.util.Random}

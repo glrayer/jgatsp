@@ -22,8 +22,8 @@ import java.util.BitSet;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
+import com.helger.commons.annotations.ReturnsMutableObject;
 import com.helger.genetic.model.IChromosome;
-import com.phloc.commons.annotations.ReturnsMutableObject;
 
 /**
  * Crossover chromosome wrapper (CCW) implementation

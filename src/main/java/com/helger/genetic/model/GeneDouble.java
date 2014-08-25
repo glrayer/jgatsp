@@ -16,10 +16,10 @@
  */
 package com.helger.genetic.model;
 
-import com.phloc.commons.annotations.MustImplementEqualsAndHashcode;
-import com.phloc.commons.equals.EqualsUtils;
-import com.phloc.commons.hash.HashCodeGenerator;
-import com.phloc.commons.string.ToStringGenerator;
+import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
+import com.helger.commons.equals.EqualsUtils;
+import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.string.ToStringGenerator;
 
 @MustImplementEqualsAndHashcode
 public final class GeneDouble implements IGene

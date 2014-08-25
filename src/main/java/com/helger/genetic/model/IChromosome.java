@@ -22,8 +22,8 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.phloc.commons.annotations.MustImplementEqualsAndHashcode;
-import com.phloc.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
+import com.helger.commons.annotations.ReturnsMutableCopy;
 
 /**
  * Unmodifiable collection of {@link IGene}. The fitness function should be

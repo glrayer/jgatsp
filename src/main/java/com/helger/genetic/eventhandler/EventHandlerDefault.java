@@ -20,11 +20,11 @@ import javax.annotation.CheckForSigned;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.CGlobal;
+import com.helger.commons.annotations.OverrideOnDemand;
 import com.helger.genetic.IEventHandler;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.model.IPopulation;
-import com.phloc.commons.CGlobal;
-import com.phloc.commons.annotations.OverrideOnDemand;
 
 public class EventHandlerDefault implements IEventHandler
 {

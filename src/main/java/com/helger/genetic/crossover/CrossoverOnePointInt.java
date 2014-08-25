@@ -18,14 +18,14 @@ package com.helger.genetic.crossover;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotations.UnsupportedOperation;
+import com.helger.commons.annotations.VisibleForTesting;
 import com.helger.genetic.model.Chromosome;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.utils.decisionmaker.IDecisionMaker;
 import com.helger.genetic.utils.random.RandomGenerator;
-import com.phloc.commons.annotations.Nonempty;
-import com.phloc.commons.annotations.OverrideOnDemand;
-import com.phloc.commons.annotations.UnsupportedOperation;
-import com.phloc.commons.annotations.VisibleForTesting;
 
 /**
  * Crossover for 2 int-chromosomes at a single point, having unique genes only.

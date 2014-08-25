@@ -20,8 +20,8 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.phloc.commons.annotations.Nonempty;
-import com.phloc.commons.random.VerySecureRandom;
+import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.random.VerySecureRandom;
 
 /**
  * The central class for creating random values.

@@ -21,12 +21,12 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.math.MathHelper;
 import com.helger.genetic.model.Chromosome;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.model.IGene;
 import com.helger.genetic.utils.decisionmaker.IDecisionMaker;
 import com.helger.genetic.utils.random.RandomGenerator;
-import com.phloc.commons.math.MathHelper;
 
 /**
  * Mutation that randomly reverses a range of genes. Original:

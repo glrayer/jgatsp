@@ -23,12 +23,12 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.phloc.commons.annotations.Nonempty;
-import com.phloc.commons.annotations.ReturnsMutableCopy;
-import com.phloc.commons.collections.ContainerHelper;
-import com.phloc.commons.equals.EqualsUtils;
-import com.phloc.commons.hash.HashCodeGenerator;
-import com.phloc.commons.string.ToStringGenerator;
+import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.equals.EqualsUtils;
+import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.string.ToStringGenerator;
 
 public class Chromosome implements IChromosome
 {

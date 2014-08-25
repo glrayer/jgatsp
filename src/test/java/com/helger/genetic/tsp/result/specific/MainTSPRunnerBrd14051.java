@@ -18,12 +18,12 @@ package com.helger.genetic.tsp.result.specific;
 
 import java.util.Random;
 
+import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.genetic.tsp.AbstractFileBasedTSPRunner;
 import com.helger.genetic.tsp.TSPRunner;
 import com.helger.genetic.utils.random.RandomGenerator;
 import com.helger.genetic.utils.random.RandomGeneratorRandom;
 import com.helger.math.matrix.Matrix;
-import com.phloc.commons.io.resource.ClassPathResource;
 
 public final class MainTSPRunnerBrd14051 extends AbstractFileBasedTSPRunner
 {

@@ -22,6 +22,8 @@ import gnu.trove.list.TIntList;
 import java.io.File;
 import java.util.Random;
 
+import com.helger.commons.io.file.FileUtils;
+import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.ICrossover;
 import com.helger.genetic.IMutation;
@@ -42,10 +44,8 @@ import com.helger.genetic.utils.decisionmaker.DecisionMakerPercentage;
 import com.helger.genetic.utils.random.RandomGenerator;
 import com.helger.genetic.utils.random.RandomGeneratorRandom;
 import com.helger.math.matrix.Matrix;
-import com.phloc.commons.io.file.FileUtils;
-import com.phloc.commons.io.resource.ClassPathResource;
-import com.phloc.poi.excel.EExcelVersion;
-import com.phloc.poi.excel.WorkbookCreationHelper;
+import com.helger.poi.excel.EExcelVersion;
+import com.helger.poi.excel.WorkbookCreationHelper;
 
 public final class MainTSPRunnerBerlin52Best1 extends AbstractFileBasedTSPRunner
 {

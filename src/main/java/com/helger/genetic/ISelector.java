@@ -20,8 +20,8 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.genetic.model.IChromosome;
-import com.phloc.commons.annotations.ReturnsMutableCopy;
 
 public interface ISelector
 {

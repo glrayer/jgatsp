@@ -21,8 +21,8 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
-import com.phloc.commons.annotations.ReturnsMutableCopy;
-import com.phloc.commons.annotations.ReturnsMutableObject;
+import com.helger.commons.annotations.ReturnsMutableCopy;
+import com.helger.commons.annotations.ReturnsMutableObject;
 
 public interface IPopulation
 {

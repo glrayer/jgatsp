@@ -24,6 +24,7 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.math.FactorialHelper;
 import com.helger.genetic.model.Chromosome;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.model.IChromsomeValidator;
@@ -32,7 +33,6 @@ import com.helger.genetic.model.IMutablePopulation;
 import com.helger.genetic.model.IPopulation;
 import com.helger.genetic.populationcreator.AbstractPopulationCreator;
 import com.helger.genetic.utils.random.RandomGenerator;
-import com.phloc.commons.math.FactorialHelper;
 
 public final class TSPPopulationCreatorRandom extends AbstractPopulationCreator
 {

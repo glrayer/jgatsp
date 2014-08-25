@@ -21,6 +21,8 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.math.MathHelper;
 import com.helger.genetic.model.Chromosome;
 import com.helger.genetic.model.GeneInt;
 import com.helger.genetic.model.IChromosome;
@@ -29,8 +31,6 @@ import com.helger.genetic.mutation.AbstractMutation;
 import com.helger.genetic.utils.decisionmaker.IDecisionMaker;
 import com.helger.genetic.utils.random.RandomGenerator;
 import com.helger.math.matrix.Matrix;
-import com.phloc.commons.annotations.Nonempty;
-import com.phloc.commons.math.MathHelper;
 
 /**
  * Mutation that sorts a sub-sequence with the greedy TSP algorithm:
