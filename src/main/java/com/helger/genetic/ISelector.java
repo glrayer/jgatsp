@@ -27,10 +27,11 @@ public interface ISelector
 {
   /**
    * Select the chromosomes that should survive.
-   * 
+   *
    * @param aChromosomes
    *        The population to be modified. It contains the chromosomes from the
    *        last population.
+   * @return The surviving chromosomes
    */
   @Nonnull
   @ReturnsMutableCopy

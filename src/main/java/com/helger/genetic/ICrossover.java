@@ -34,9 +34,10 @@ public interface ICrossover extends IDecidingAction
   /**
    * Perform a crossover with a certain percentage on certain chromosomes within
    * the population.
-   * 
+   *
    * @param aChromosomes
    *        The chromosomes in which the crossover should be performed.
+   * @return The crossed-over chromosomes
    */
   @Nonnull
   List <IChromosome> crossover (@Nonnull List <IChromosome> aChromosomes);

@@ -27,9 +27,10 @@ public interface IMutation extends IDecidingAction
   /**
    * Perform a mutation on all chromosomes inside a population with a certain
    * percentage.
-   * 
+   *
    * @param aChromosomes
    *        The population who's chromosomes should be mutated.
+   * @return The mutated chromosomes
    */
   @Nonnull
   List <IChromosome> mutate (@Nonnull List <IChromosome> aChromosomes);

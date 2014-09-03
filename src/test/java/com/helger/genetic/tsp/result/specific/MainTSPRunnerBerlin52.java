@@ -86,6 +86,9 @@ public final class MainTSPRunnerBerlin52 extends AbstractFileBasedTSPRunner
    * PopulationSize=51; SelectorAllSortedBest(2); C:new DecisionMakerPercentage (0.3); M:new DecisionMakerPercentage (92.9) ==> nMinGen=214
    * PopulationSize=51; SelectorAllSortedBest(2); C:new DecisionMakerPercentage (0.4); M:new DecisionMakerPercentage (92.9) ==> nMinGen=214
    * </pre>
+   *
+   * @param args
+   *        Main args
    */
   public static void main (final String [] args)
   {
