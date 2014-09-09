@@ -30,6 +30,7 @@
   <name>jgatsp</name>
   <description>https://github.com/phax/jgatsp.git</description>
   <url>https://github.com/phax/jgatsp</url>
+  <inceptionYear>2013</inceptionYear>
   
   <licenses>
     <license>
@@ -40,9 +41,10 @@
   </licenses>
   
   <scm>
-    <url>https://github.com/phax/jgatsp</url>
+    <url>http://github.com/phax/jgatsp</url>
     <connection>scm:git:git@github.com:phax/jgatsp.git</connection>
     <developerConnection>scm:git:git@github.com:phax/jgatsp.git</developerConnection>
+    <tag>HEAD</tag>
   </scm>
 
   <organization>
