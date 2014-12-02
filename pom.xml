@@ -109,6 +109,9 @@
             <Export-Package>
               com.helger.genetic.*
             </Export-Package>
+            <Import-Package>
+              !javax.annotation.*,*
+            </Import-Package>
           </instructions>
         </configuration>
       </plugin>
