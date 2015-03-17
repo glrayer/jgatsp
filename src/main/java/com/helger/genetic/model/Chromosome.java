@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 import com.helger.commons.annotations.Nonempty;
 import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.equals.EqualsUtils;
 import com.helger.commons.hash.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
@@ -48,7 +48,7 @@ public class Chromosome implements IChromosome
                      @Nullable final IChromsomeValidator aChromsomeValidator,
                      @Nonnull @Nonempty final IGene... aGenes)
   {
-    this (aFitnessFunction, aChromsomeValidator, ContainerHelper.newList (aGenes));
+    this (aFitnessFunction, aChromsomeValidator, CollectionHelper.newList (aGenes));
   }
 
   public Chromosome (@Nonnull final IChromosome aChromsome, @Nonnull @Nonempty final List <? extends IGene> aGenes)
@@ -62,7 +62,7 @@ public class Chromosome implements IChromosome
   {
     if (aFitnessFunction == null)
       throw new NullPointerException ("fitnessFunction");
-    if (ContainerHelper.isEmpty (aGenes))
+    if (CollectionHelper.isEmpty (aGenes))
       throw new IllegalArgumentException ("No genes provided!");
     m_aFitnessFunction = aFitnessFunction;
     m_aChromsomeValidator = aChromsomeValidator;
@@ -86,7 +86,7 @@ public class Chromosome implements IChromosome
   @ReturnsMutableCopy
   public List <IGene> getAllGenes ()
   {
-    return ContainerHelper.newList (m_aGenes);
+    return CollectionHelper.newList (m_aGenes);
   }
 
   @Nonnull

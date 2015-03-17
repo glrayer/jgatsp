@@ -24,7 +24,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.genetic.model.Chromosome;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.model.MockFitnessFunction;
@@ -32,7 +32,7 @@ import com.helger.genetic.utils.decisionmaker.DecisionMakerAlways;
 
 /**
  * Test class for class {@link CrossoverPartiallyMapped}.
- * 
+ *
  * @author Philip Helger
  */
 public final class CrossoverPartiallyMappedTest
@@ -50,7 +50,7 @@ public final class CrossoverPartiallyMappedTest
     };
     final IChromosome c1 = Chromosome.createGenesInt (new MockFitnessFunction (), null, 1, 2, 4, 6, 0, 5, 3);
     final IChromosome c2 = Chromosome.createGenesInt (new MockFitnessFunction (), null, 3, 4, 5, 2, 1, 6, 0);
-    final List <IChromosome> ret = aCrossover.crossover (ContainerHelper.newList (c1, c2));
+    final List <IChromosome> ret = aCrossover.crossover (CollectionHelper.newList (c1, c2));
     assertNotNull (ret);
     assertEquals (2, ret.size ());
     final int [] aNew0 = new int [] { 0, 5, 4, 2, 1, 6, 3 };

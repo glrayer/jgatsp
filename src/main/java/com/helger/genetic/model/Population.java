@@ -25,7 +25,7 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.annotations.ReturnsMutableCopy;
 import com.helger.commons.annotations.ReturnsMutableObject;
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 
 public class Population implements IMutablePopulation
 {
@@ -71,7 +71,7 @@ public class Population implements IMutablePopulation
   @ReturnsMutableCopy
   public List <IChromosome> getAllChromosomes ()
   {
-    return ContainerHelper.newList (m_aChromosomes);
+    return CollectionHelper.newList (m_aChromosomes);
   }
 
   @Nonnull

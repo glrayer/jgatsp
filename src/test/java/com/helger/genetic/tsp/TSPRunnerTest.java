@@ -23,7 +23,7 @@ import javax.annotation.Nonnull;
 
 import org.junit.Test;
 
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.genetic.tsp.model.TSPFitnessFunction;
 import com.helger.genetic.tsp.mutation.TSPMutationGreedy;
 import com.helger.math.graph.IGraph;
@@ -39,7 +39,7 @@ public final class TSPRunnerTest
   @Nonnull
   private static Matrix _createDistanceMatrix (@Nonnull final IGraph aGraph)
   {
-    final List <IGraphNode> aNodes = ContainerHelper.newList (aGraph.getAllNodes ().values ());
+    final List <IGraphNode> aNodes = CollectionHelper.newList (aGraph.getAllNodes ().values ());
     final int nCities = aNodes.size ();
     final Matrix aMatrix = new Matrix (nCities, nCities);
     for (int nRow = 0; nRow < nCities; ++nRow)

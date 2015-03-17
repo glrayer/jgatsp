@@ -22,7 +22,7 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.compare.ESortOrder;
 import com.helger.genetic.model.ComparatorChromosomeFitness;
 import com.helger.genetic.model.IChromosome;
@@ -34,7 +34,7 @@ import com.helger.genetic.utils.random.RandomGenerator;
  * <li>Take a subset of the best fitting chromosomes</li>
  * <li>Randomly choose a chromosome of them</li>
  * </ul>
- * 
+ *
  * @author Philip Helger
  */
 public class SelectorBestSortedRandom extends AbstractSelector
@@ -51,7 +51,7 @@ public class SelectorBestSortedRandom extends AbstractSelector
   @Nonnull
   public List <IChromosome> selectSurvivingChromosomes (@Nonnull final List <IChromosome> aChromosomes)
   {
-    final List <IChromosome> aSortedChromosomes = ContainerHelper.getSortedInline (aChromosomes,
+    final List <IChromosome> aSortedChromosomes = CollectionHelper.getSortedInline (aChromosomes,
                                                                                    new ComparatorChromosomeFitness (ESortOrder.DESCENDING))
                                                                  .subList (0, m_nTournamentSize);
 

@@ -21,7 +21,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.collections.ContainerHelper;
+import com.helger.commons.collections.CollectionHelper;
 import com.helger.commons.compare.ESortOrder;
 import com.helger.genetic.model.ComparatorChromosomeFitness;
 import com.helger.genetic.model.IChromosome;
@@ -32,7 +32,7 @@ import com.helger.genetic.model.IChromosome;
  * <li>Take all chromosomes in best fitting order</li>
  * <li>Always choose the best fitting chromosome</li>
  * </ul>
- * 
+ *
  * @author Philip Helger
  */
 public class SelectorAllSortedBestOnly extends AbstractSelector
@@ -44,7 +44,7 @@ public class SelectorAllSortedBestOnly extends AbstractSelector
   public List <IChromosome> selectSurvivingChromosomes (@Nonnull final List <IChromosome> aChromosomes)
   {
     // Sort all chromosomes by descending fitness
-    final IChromosome aFittestChromosome = ContainerHelper.getSortedInline (aChromosomes,
+    final IChromosome aFittestChromosome = CollectionHelper.getSortedInline (aChromosomes,
                                                                             new ComparatorChromosomeFitness (ESortOrder.DESCENDING))
                                                           .get (0);
 
