@@ -20,6 +20,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.model.IMutablePopulation;
 import com.helger.genetic.model.IPopulation;
@@ -32,12 +33,12 @@ import com.helger.genetic.model.IPopulation;
  *         [Selection] Select two parent chromosomes from a population
  *         [Crossover] With a crossover probability cross over the parents to form a new offspring (children). If no crossover was performed, offspring is an exact copy of parents.
  *         [Mutation] With a mutation probability mutate new offspring at each locus (position in chromosome).
- *         [Accepting] Place new offspring in a new population 
+ *         [Accepting] Place new offspring in a new population
  *     [Replace] Use new generated population for a further run of algorithm
  *     [Test] If the end condition is satisfied, stop, and return the best solution in current population
  *     [Loop] Go to step 2
  * </pre>
- * 
+ *
  * @author Philip Helger
  */
 public class GARunner
@@ -56,18 +57,12 @@ public class GARunner
                    @Nonnull final ICrossover aCrossover,
                    @Nonnull final IMutation aMutation)
   {
-    if (aEventHandler == null)
-      throw new NullPointerException ("EventHandler");
-    if (aContinuation == null)
-      throw new NullPointerException ("Continuation");
-    if (aPopulationCreator == null)
-      throw new NullPointerException ("PopulationCreator");
-    if (aSelector == null)
-      throw new NullPointerException ("Selector");
-    if (aCrossover == null)
-      throw new NullPointerException ("Crossover");
-    if (aMutation == null)
-      throw new NullPointerException ("Mutation");
+    ValueEnforcer.notNull (aEventHandler, "EventHandler");
+    ValueEnforcer.notNull (aContinuation, "Continuation");
+    ValueEnforcer.notNull (aPopulationCreator, "PopulationCreator");
+    ValueEnforcer.notNull (aSelector, "Selector");
+    ValueEnforcer.notNull (aCrossover, "Crossover");
+    ValueEnforcer.notNull (aMutation, "Mutation");
 
     m_aEventHandler = aEventHandler;
     m_aContinuation = aContinuation;
@@ -114,7 +109,10 @@ public class GARunner
       for (final IChromosome aChromosome : aChromosomes)
       {
         if (!aChromosome.isValid ())
-          throw new IllegalStateException ("Crossover created illegal chromosome at index " + nChromosomeIndex);
+          throw new IllegalStateException ("Crossover created illegal chromosome at index " +
+                                           nChromosomeIndex +
+                                           ": " +
+                                           aChromosome);
         ++nChromosomeIndex;
       }
 
@@ -124,7 +122,10 @@ public class GARunner
       for (final IChromosome aChromosome : aChromosomes)
       {
         if (!aChromosome.isValid ())
-          throw new IllegalStateException ("Mutation created illegal chromosome at index " + nMutationIndex);
+          throw new IllegalStateException ("Mutation created illegal chromosome at index " +
+                                           nMutationIndex +
+                                           ": " +
+                                           aChromosome);
         ++nMutationIndex;
       }
 

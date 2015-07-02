@@ -26,6 +26,11 @@ public abstract class AbstractPopulationCreator implements IPopulationCreator
 {
   private long m_nGeneration = 0;
 
+  public long getCurrentGeneration ()
+  {
+    return m_nGeneration;
+  }
+
   @Nonnull
   public final IMutablePopulation createEmptyPopulation ()
   {

@@ -23,6 +23,7 @@ import javax.annotation.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.IEventHandler;
 import com.helger.genetic.model.IPopulation;
@@ -34,7 +35,8 @@ public class ContinuationKnownOptimum extends AbstractContinuation
   private final double m_dOptimumFitness;
   private final IEventHandler m_aEventHandler;
 
-  public ContinuationKnownOptimum (@Nonnegative final double dOptimumFitness, @Nonnull final IEventHandler aEventHandler)
+  public ContinuationKnownOptimum (@Nonnegative final double dOptimumFitness,
+                                   @Nonnull final IEventHandler aEventHandler)
   {
     this (dOptimumFitness, aEventHandler, (IContinuation) null);
   }
@@ -44,8 +46,7 @@ public class ContinuationKnownOptimum extends AbstractContinuation
                                    @Nullable final IContinuation aNestedGACallback)
   {
     super (aNestedGACallback);
-    if (aEventHandler == null)
-      throw new NullPointerException ("EventHandler");
+    ValueEnforcer.notNull (aEventHandler, "EventHandler");
     m_dOptimumFitness = dOptimumFitness;
     m_aEventHandler = aEventHandler;
   }
@@ -62,11 +63,13 @@ public class ContinuationKnownOptimum extends AbstractContinuation
     }
     else
       if (nCmp > 0)
+      {
         s_aLogger.warn ("Found something better than the optimum: " +
                         dKnownBestFitness +
                         " vs " +
                         m_dOptimumFitness +
                         "!!!");
+      }
     return nCmp < 0;
   }
 }

@@ -22,6 +22,7 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.compare.ESortOrder;
 import com.helger.genetic.model.ComparatorChromosomeFitness;
@@ -42,8 +43,7 @@ public class SelectorAllSortedBest extends AbstractSelector
 
   public SelectorAllSortedBest (@Nonnegative final int nBestCount)
   {
-    if (nBestCount < 1)
-      throw new IllegalArgumentException ();
+    ValueEnforcer.isGT0 (nBestCount, "BestCount");
     m_nBestCount = nBestCount;
   }
 

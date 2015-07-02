@@ -21,6 +21,7 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.genetic.IMutation;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.utils.decisionmaker.IDecisionMaker;
@@ -44,8 +45,7 @@ public abstract class AbstractMutation implements IMutation
 
   public final void setDecisionMaker (@Nonnull final IDecisionMaker aDecisionMaker)
   {
-    if (aDecisionMaker == null)
-      throw new NullPointerException ("DecisionMaker");
+    ValueEnforcer.notNull (aDecisionMaker, "DecisionMaker");
     m_aDescisionMaker = aDecisionMaker;
   }
 

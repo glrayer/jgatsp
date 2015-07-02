@@ -22,6 +22,7 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.genetic.ICrossover;
 import com.helger.genetic.model.IChromosome;
@@ -38,7 +39,9 @@ public abstract class AbstractCrossover implements ICrossover
                             @Nonnull final IDecisionMaker aDescisionMaker)
   {
     if (nCrossoverChromosomeCount < 2)
-      throw new IllegalArgumentException ("At least 2 chromosomes are required for a crossover!");
+      throw new IllegalArgumentException ("At least 2 chromosomes are required for a crossover (" +
+                                          nCrossoverChromosomeCount +
+                                          ")!");
     m_nCrossoverChromosomeCount = nCrossoverChromosomeCount;
     setDecisionMaker (aDescisionMaker);
   }
@@ -57,8 +60,7 @@ public abstract class AbstractCrossover implements ICrossover
 
   public final void setDecisionMaker (@Nonnull final IDecisionMaker aDecisionMaker)
   {
-    if (aDecisionMaker == null)
-      throw new NullPointerException ("DecisionMaker");
+    ValueEnforcer.notNull (aDecisionMaker, "DecisionMaker");
     m_aDescisionMaker = aDecisionMaker;
   }
 
@@ -76,7 +78,7 @@ public abstract class AbstractCrossover implements ICrossover
 
   /**
    * Execute the crossover on the passed chromosomes.
-   * 
+   *
    * @param aChromosomes
    *        The chromosomes to crossover. The length of the array equals the
    *        result of {@link #getExecutionCount()}.

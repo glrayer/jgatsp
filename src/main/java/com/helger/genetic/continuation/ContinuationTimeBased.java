@@ -20,6 +20,7 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.model.IPopulation;
 
@@ -37,7 +38,12 @@ public class ContinuationTimeBased extends AbstractContinuation
                                 @Nullable final IContinuation aNestedGACallback)
   {
     super (aNestedGACallback);
-    m_nMilliSecondsToRun = nMilliSecondsToRun;
+    m_nMilliSecondsToRun = ValueEnforcer.isGT0 (nMilliSecondsToRun, "MilliSecondsToRun");
+  }
+
+  public long getMilliSecondsToRun ()
+  {
+    return m_nMilliSecondsToRun;
   }
 
   @Override

@@ -22,6 +22,7 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.compare.ESortOrder;
 import com.helger.genetic.model.ComparatorChromosomeFitness;
@@ -44,8 +45,7 @@ public class SelectorRandomSortedBestOnly extends AbstractSelector
 
   public SelectorRandomSortedBestOnly (@Nonnegative final int nTournamentSize)
   {
-    if (nTournamentSize < 1)
-      throw new IllegalArgumentException ("tournamentSize must be at least 1");
+    ValueEnforcer.isGT0 (nTournamentSize, "TournamentSize");
     m_nTournamentSize = nTournamentSize;
   }
 

@@ -20,6 +20,7 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.model.IPopulation;
 
@@ -36,9 +37,13 @@ public class ContinuationTotalGeneration extends AbstractContinuation
                                       @Nullable final IContinuation aNestedGACallback)
   {
     super (aNestedGACallback);
-    if (nMaxGenerationCount < 1)
-      throw new IllegalArgumentException ("max generation count is too small: " + nMaxGenerationCount);
+    ValueEnforcer.isGT0 (nMaxGenerationCount, "MaxGenerationCount");
     m_nMaxGenerationCount = nMaxGenerationCount;
+  }
+
+  public long getMaxGenerationCount ()
+  {
+    return m_nMaxGenerationCount;
   }
 
   @Override

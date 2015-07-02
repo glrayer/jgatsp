@@ -21,6 +21,7 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.genetic.IEventHandler;
 import com.helger.genetic.ISelector;
@@ -40,14 +41,10 @@ public class SelectorAlternating extends AbstractSelector
                               @Nonnull final IEventHandler aEventHandler)
   {
     super ();
-    if (aCS1 == null)
-      throw new NullPointerException ("crossoverSelector1");
-    if (aCS2 == null)
-      throw new NullPointerException ("crossoverSelector2");
-    if (nAlternatingGenerationCount < 1)
-      throw new IllegalArgumentException ("AlternatingGenerationCount may not be < 1: " + nAlternatingGenerationCount);
-    if (aEventHandler == null)
-      throw new NullPointerException ("eventHandler");
+    ValueEnforcer.notNull (aCS1, "CrossoverSelector1");
+    ValueEnforcer.notNull (aCS2, "CrossoverSelector2");
+    ValueEnforcer.isGT0 (nAlternatingGenerationCount, "AlternatingGenerationCount");
+    ValueEnforcer.notNull (aEventHandler, "EventHandler");
     m_aCS1 = aCS1;
     m_aCS2 = aCS2;
     m_aCS = aCS1;
@@ -57,12 +54,12 @@ public class SelectorAlternating extends AbstractSelector
 
   /**
    * Invoked each time the cross over selector is changed
-   * 
+   *
    * @param aNewCS
    *        The new crossover selector to be used. Never <code>null</code>.
    */
   @OverrideOnDemand
-  protected void onCrossoverSelectionAlternation (@SuppressWarnings ("unused") @Nonnull final ISelector aNewCS)
+  protected void onCrossoverSelectionAlternation (@Nonnull final ISelector aNewCS)
   {}
 
   @Nonnull

@@ -22,6 +22,7 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
+import com.helger.commons.ValueEnforcer;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.utils.random.RandomGenerator;
 
@@ -31,7 +32,7 @@ import com.helger.genetic.utils.random.RandomGenerator;
  * <li>Take a random subset of chromosomes to choose from</li>
  * <li>Pick random chromosomes in each run</li>
  * </ul>
- * 
+ *
  * @author Philip Helger
  */
 public class SelectorRandomUnsortedRandom extends AbstractSelector
@@ -40,8 +41,7 @@ public class SelectorRandomUnsortedRandom extends AbstractSelector
 
   public SelectorRandomUnsortedRandom (@Nonnegative final int nTournamentSize)
   {
-    if (nTournamentSize < 1)
-      throw new IllegalArgumentException ("tournamentSize must be at least 1");
+    ValueEnforcer.isGT0 (nTournamentSize, "TournamentSize");
     m_nTournamentSize = nTournamentSize;
   }
 
