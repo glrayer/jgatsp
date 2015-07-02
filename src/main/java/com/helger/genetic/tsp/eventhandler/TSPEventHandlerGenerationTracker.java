@@ -16,15 +16,15 @@
  */
 package com.helger.genetic.tsp.eventhandler;
 
-import gnu.trove.list.TIntList;
-import gnu.trove.list.array.TIntArrayList;
-
 import javax.annotation.Nonnull;
 
 import com.helger.genetic.eventhandler.EventHandlerDefault;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.model.IPopulation;
 import com.helger.genetic.tsp.model.TSPFitnessFunction;
+
+import gnu.trove.list.TIntList;
+import gnu.trove.list.array.TIntArrayList;
 
 public class TSPEventHandlerGenerationTracker extends EventHandlerDefault
 {

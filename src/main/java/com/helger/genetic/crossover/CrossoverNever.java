@@ -18,8 +18,8 @@ package com.helger.genetic.crossover;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.UnsupportedOperation;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.UnsupportedOperation;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.utils.decisionmaker.DecisionMakerNever;
 

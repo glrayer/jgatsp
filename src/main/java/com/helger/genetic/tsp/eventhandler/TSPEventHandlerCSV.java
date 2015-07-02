@@ -18,8 +18,7 @@ package com.helger.genetic.tsp.eventhandler;
 
 import javax.annotation.Nonnull;
 
-import au.com.bytecode.opencsv.CSVWriter;
-
+import com.helger.commons.csv.CSVWriter;
 import com.helger.genetic.eventhandler.EventHandlerDefault;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.model.IPopulation;

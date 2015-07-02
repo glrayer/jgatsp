@@ -18,7 +18,7 @@ package com.helger.genetic.utils.decisionmaker;
 
 import javax.annotation.Nonnegative;
 
-import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotation.OverrideOnDemand;
 
 /**
  * A percentage based decision maker with decreasing percentages.

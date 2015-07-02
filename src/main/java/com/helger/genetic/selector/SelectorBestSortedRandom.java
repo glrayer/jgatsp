@@ -22,7 +22,7 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.commons.compare.ESortOrder;
 import com.helger.genetic.model.ComparatorChromosomeFitness;
 import com.helger.genetic.model.IChromosome;
@@ -52,8 +52,8 @@ public class SelectorBestSortedRandom extends AbstractSelector
   public List <IChromosome> selectSurvivingChromosomes (@Nonnull final List <IChromosome> aChromosomes)
   {
     final List <IChromosome> aSortedChromosomes = CollectionHelper.getSortedInline (aChromosomes,
-                                                                                   new ComparatorChromosomeFitness (ESortOrder.DESCENDING))
-                                                                 .subList (0, m_nTournamentSize);
+                                                                                    new ComparatorChromosomeFitness ().setSortOrder (ESortOrder.DESCENDING))
+                                                                  .subList (0, m_nTournamentSize);
 
     final int nChromosomes = aChromosomes.size ();
     final List <IChromosome> ret = new ArrayList <IChromosome> ();

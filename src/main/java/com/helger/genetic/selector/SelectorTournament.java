@@ -33,7 +33,7 @@ import com.helger.genetic.utils.random.RandomGenerator;
  * <li>Take all chromosomes in best fitting order</li>
  * <li>Choose every chromosome exactly once, independent of the fitness</li>
  * </ul>
- * 
+ *
  * @author Philip Helger
  */
 public class SelectorTournament extends AbstractSelector
@@ -44,7 +44,7 @@ public class SelectorTournament extends AbstractSelector
   @Nonnull
   public List <IChromosome> selectSurvivingChromosomes (@Nonnull final List <IChromosome> aChromosomes)
   {
-    Collections.sort (aChromosomes, new ComparatorChromosomeFitness (ESortOrder.ASCENDING));
+    Collections.sort (aChromosomes, new ComparatorChromosomeFitness ().setSortOrder (ESortOrder.ASCENDING));
 
     final int nChromosomes = aChromosomes.size ();
     double dTotalFitness = 0;

@@ -16,9 +16,9 @@
  */
 package com.helger.genetic.model;
 
-import com.helger.commons.annotations.MustImplementEqualsAndHashcode;
-import com.helger.commons.equals.EqualsUtils;
-import com.helger.commons.hash.HashCodeGenerator;
+import com.helger.commons.annotation.MustImplementEqualsAndHashcode;
+import com.helger.commons.equals.EqualsHelper;
+import com.helger.commons.hashcode.HashCodeGenerator;
 import com.helger.commons.string.ToStringGenerator;
 
 @MustImplementEqualsAndHashcode
@@ -49,7 +49,7 @@ public final class GeneDouble implements IGene
     if (!(o instanceof GeneDouble))
       return false;
     final GeneDouble rhs = (GeneDouble) o;
-    return EqualsUtils.equals (m_dValue, rhs.m_dValue);
+    return EqualsHelper.equals (m_dValue, rhs.m_dValue);
   }
 
   @Override

@@ -16,9 +16,6 @@
  */
 package com.helger.genetic.tsp.result.evaluation;
 
-import gnu.trove.iterator.TIntIterator;
-import gnu.trove.list.TIntList;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,8 +27,8 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import com.helger.commons.CGlobal;
-import com.helger.commons.GlobalDebug;
-import com.helger.commons.io.file.FileUtils;
+import com.helger.commons.debug.GlobalDebug;
+import com.helger.commons.io.file.FileHelper;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.ICrossover;
@@ -56,6 +53,9 @@ import com.helger.genetic.utils.random.RandomGenerator;
 import com.helger.genetic.utils.random.RandomGeneratorRandom;
 import com.helger.math.matrix.Matrix;
 import com.helger.poi.excel.EExcelVersion;
+
+import gnu.trove.iterator.TIntIterator;
+import gnu.trove.list.TIntList;
 
 public final class MainTSPRunnerBerlin52BestSeveral extends AbstractFileBasedTSPRunner
 {
@@ -148,6 +148,6 @@ public final class MainTSPRunnerBerlin52BestSeveral extends AbstractFileBasedTSP
         ++nColumn;
       }
     }
-    aWB.write (FileUtils.getOutputStream (new File ("data/berlin52/results-best-multiple.xlsx")));
+    aWB.write (FileHelper.getOutputStream (new File ("data/berlin52/results-best-multiple.xlsx")));
   }
 }

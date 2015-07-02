@@ -18,7 +18,7 @@ package com.helger.genetic.tsp.result.evaluation;
 
 import java.util.Random;
 
-import com.helger.commons.GlobalDebug;
+import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.ICrossover;

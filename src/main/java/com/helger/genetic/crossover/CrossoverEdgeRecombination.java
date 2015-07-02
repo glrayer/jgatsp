@@ -20,8 +20,8 @@ import java.util.BitSet;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.UnsupportedOperation;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.UnsupportedOperation;
 import com.helger.genetic.model.Chromosome;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.utils.decisionmaker.IDecisionMaker;
@@ -172,8 +172,8 @@ public class CrossoverEdgeRecombination extends AbstractCrossover
       nDstIndex++;
     }
 
-    final IChromosome aNew0 = Chromosome.createGenesInt (aChromosomes[0], aGenes0.getNewGenes ());
-    final IChromosome aNew1 = Chromosome.createGenesInt (aChromosomes[1], aGenes0.getNewGenes ());
+    final IChromosome aNew0 = Chromosome.createGenesInt (aChromosomes[0], aGenes0.getAllNewGenes ());
+    final IChromosome aNew1 = Chromosome.createGenesInt (aChromosomes[1], aGenes0.getAllNewGenes ());
     return new IChromosome [] { aNew0, aNew1 };
   }
 }

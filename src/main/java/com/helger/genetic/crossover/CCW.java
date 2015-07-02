@@ -22,12 +22,13 @@ import java.util.BitSet;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.ReturnsMutableObject;
+import com.helger.commons.ValueEnforcer;
+import com.helger.commons.annotation.ReturnsMutableObject;
 import com.helger.genetic.model.IChromosome;
 
 /**
  * Crossover chromosome wrapper (CCW) implementation
- * 
+ *
  * @author Philip Helger
  */
 class CCW
@@ -38,8 +39,7 @@ class CCW
 
   public CCW (@Nonnull final IChromosome aChromosome)
   {
-    if (aChromosome == null)
-      throw new NullPointerException ("chromosome");
+    ValueEnforcer.notNull (aChromosome, "Chromosome");
 
     m_aOldGenes = aChromosome.getGeneIntArray ();
     m_aNewGenes = new int [m_aOldGenes.length];
@@ -48,8 +48,8 @@ class CCW
   }
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
-  public final int [] getOldGenes ()
+  @ReturnsMutableObject ("Design")
+  public final int [] getAllOldGenes ()
   {
     // ESCA-JAVA0259:
     return m_aOldGenes;
@@ -85,8 +85,8 @@ class CCW
   }
 
   @Nonnull
-  @ReturnsMutableObject (reason = "Design")
-  public final int [] getNewGenes ()
+  @ReturnsMutableObject ("Design")
+  public final int [] getAllNewGenes ()
   {
     return m_aNewGenes;
   }

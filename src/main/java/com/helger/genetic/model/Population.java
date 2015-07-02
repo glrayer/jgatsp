@@ -23,9 +23,9 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.annotations.ReturnsMutableObject;
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableObject;
+import com.helger.commons.collection.CollectionHelper;
 
 public class Population implements IMutablePopulation
 {
@@ -60,7 +60,7 @@ public class Population implements IMutablePopulation
   }
 
   @Nonnull
-  @ReturnsMutableObject (reason = "speed")
+  @ReturnsMutableObject ("speed")
   public List <IChromosome> directGetAllChromosomes ()
   {
     // ESCA-JAVA0259:

@@ -45,7 +45,7 @@ public final class TSPMutationGreedyTest
 
     for (int nElements = 1; nElements < nMaxElements; ++nElements)
     {
-      final StopWatch aSW = new StopWatch (true);
+      final StopWatch aSW = StopWatch.createdStarted ();
       for (int count = 0; count < 1000; ++count)
       {
         final int [] aSelectedIndices = new int [nElements];

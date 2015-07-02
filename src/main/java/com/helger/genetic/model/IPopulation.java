@@ -21,8 +21,8 @@ import java.util.List;
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.ReturnsMutableCopy;
-import com.helger.commons.annotations.ReturnsMutableObject;
+import com.helger.commons.annotation.ReturnsMutableCopy;
+import com.helger.commons.annotation.ReturnsMutableObject;
 
 public interface IPopulation
 {
@@ -39,7 +39,7 @@ public interface IPopulation
   IChromosome getChromosome (@Nonnegative int nIndex);
 
   @Nonnull
-  @ReturnsMutableObject (reason = "speed")
+  @ReturnsMutableObject ("speed")
   List <IChromosome> directGetAllChromosomes ();
 
   @Nonnull

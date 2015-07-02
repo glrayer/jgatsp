@@ -21,7 +21,7 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.math.MathHelper;
 import com.helger.genetic.model.Chromosome;
 import com.helger.genetic.model.GeneInt;

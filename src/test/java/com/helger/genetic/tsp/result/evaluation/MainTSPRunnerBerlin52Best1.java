@@ -16,13 +16,10 @@
  */
 package com.helger.genetic.tsp.result.evaluation;
 
-import gnu.trove.iterator.TIntIterator;
-import gnu.trove.list.TIntList;
-
 import java.io.File;
 import java.util.Random;
 
-import com.helger.commons.io.file.FileUtils;
+import com.helger.commons.io.file.FileHelper;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.ICrossover;
@@ -46,6 +43,9 @@ import com.helger.genetic.utils.random.RandomGeneratorRandom;
 import com.helger.math.matrix.Matrix;
 import com.helger.poi.excel.EExcelVersion;
 import com.helger.poi.excel.WorkbookCreationHelper;
+
+import gnu.trove.iterator.TIntIterator;
+import gnu.trove.list.TIntList;
 
 public final class MainTSPRunnerBerlin52Best1 extends AbstractFileBasedTSPRunner
 {
@@ -92,6 +92,6 @@ public final class MainTSPRunnerBerlin52Best1 extends AbstractFileBasedTSPRunner
       aWCH.addCell (it.next ());
       ++nGeneration;
     }
-    aWCH.write (FileUtils.getOutputStream (aFile));
+    aWCH.write (FileHelper.getOutputStream (aFile));
   }
 }

@@ -27,8 +27,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.helger.commons.CGlobal;
-import com.helger.commons.GlobalDebug;
-import com.helger.commons.annotations.Nonempty;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.debug.GlobalDebug;
 import com.helger.commons.locale.LocaleCache;
 import com.helger.commons.math.MathHelper;
 import com.helger.commons.string.StringHelper;
@@ -64,7 +64,7 @@ import com.helger.math.matrix.Matrix;
 public class TSPRunner
 {
   private static final Logger s_aLogger = LoggerFactory.getLogger (TSPRunner.class);
-  private static final Locale LOCALE = LocaleCache.getLocale ("de", "AT");
+  private static final Locale LOCALE = LocaleCache.getInstance ().getLocale ("de", "AT");
 
   private final String m_sID;
 
@@ -117,40 +117,41 @@ public class TSPRunner
       aNestedCont = new ContinuationTimeBased (20 * CGlobal.MILLISECONDS_PER_SECOND, aNestedCont);
     final IContinuation cont = new ContinuationInfinite (aNestedCont);
     final IPopulationCreator pc = new TSPPopulationCreatorRandom (nCities, nPopulationSize, ff, cv);
-    final ISelector s = true ? new SelectorAllSortedBest (2) : new SelectorAlternating (new SelectorAllSortedBest (4),
-                                                                                        new SelectorTournament (),
-                                                                                        10000,
-                                                                                        eh)
-    {
-      @Override
-      protected void onCrossoverSelectionAlternation (@SuppressWarnings ("unused") @Nonnull final ISelector aNewCS)
-      {
-        if (GlobalDebug.isDebugMode ())
-          s_aLogger.info ("Switching crossover selector to " + aNewCS.getClass ().getName ());
-      }
-    };
+    final ISelector s = true ? new SelectorAllSortedBest (2)
+                             : new SelectorAlternating (new SelectorAllSortedBest (4),
+                                                        new SelectorTournament (),
+                                                        10000,
+                                                        eh)
+                             {
+                               @Override
+                               protected void onCrossoverSelectionAlternation (@SuppressWarnings ("unused") @Nonnull final ISelector aNewCS)
+                               {
+                                 if (GlobalDebug.isDebugMode ())
+                                   s_aLogger.info ("Switching crossover selector to " + aNewCS.getClass ().getName ());
+                               }
+                             };
     final DecisionMakerPercentage cdm = true ? new DecisionMakerPercentage (2)
-                                            : new DecisionMakerPercentageDecreasing (12, 0.5, 1, 5000)
-                                            {
-                                              @Override
-                                              protected void onPercentageChange ()
-                                              {
-                                                if (false)
-                                                  s_aLogger.info ("New cdm% of " + _asPerc (getPercentage () / 100));
-                                              }
-                                            };
+                                             : new DecisionMakerPercentageDecreasing (12, 0.5, 1, 5000)
+                                             {
+                                               @Override
+                                               protected void onPercentageChange ()
+                                               {
+                                                 if (false)
+                                                   s_aLogger.info ("New cdm% of " + _asPerc (getPercentage () / 100));
+                                               }
+                                             };
     final ICrossover c = true ? new CrossoverPartiallyMapped (cdm) : new CrossoverOnePointInt (cdm);
     final AbstractDecisionMakerRandom mdm = false ? new DecisionMakerPercentage (75)
-                                                 : new DecisionMakerPercentageDecreasing (50, 2, 1, 5000)
-                                                 {
-                                                   @Override
-                                                   protected void onPercentageChange ()
-                                                   {
-                                                     if (false)
-                                                       s_aLogger.info ("New mdm% of " +
-                                                                       _asPerc (getPercentage () / 100));
-                                                   }
-                                                 };
+                                                  : new DecisionMakerPercentageDecreasing (50, 2, 1, 5000)
+                                                  {
+                                                    @Override
+                                                    protected void onPercentageChange ()
+                                                    {
+                                                      if (false)
+                                                        s_aLogger.info ("New mdm% of " +
+                                                                        _asPerc (getPercentage () / 100));
+                                                    }
+                                                  };
     final IMutation m = true ? new TSPMutationGreedy (mdm, aDistances) : new MutationRandomMoveMultiple (mdm);
     return run (aDistances, dOptimumDistance, ff, eh, cont, pc, s, c, m);
   }
@@ -208,7 +209,7 @@ public class TSPRunner
                       (dOptimumDistance >= 0 ? " with known optimum of " + aNF.format (dOptimumDistance) : ""));
 
     // Solve TSP
-    final StopWatch aSW = new StopWatch (true);
+    final StopWatch aSW = StopWatch.createdStarted ();
     final IChromosome aBest = new GARunner (aEventHandler,
                                             aContinuation,
                                             aPopulationCreator,

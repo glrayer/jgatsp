@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.helger.commons.CGlobal;
-import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.genetic.IEventHandler;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.model.IPopulation;

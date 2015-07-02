@@ -18,8 +18,8 @@ package com.helger.genetic.crossover;
 
 import javax.annotation.Nonnull;
 
-import com.helger.commons.annotations.Nonempty;
-import com.helger.commons.annotations.UnsupportedOperation;
+import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.annotation.UnsupportedOperation;
 import com.helger.genetic.model.Chromosome;
 import com.helger.genetic.model.IChromosome;
 import com.helger.genetic.utils.decisionmaker.IDecisionMaker;
@@ -110,8 +110,8 @@ public class CrossoverCycle extends AbstractCrossover
       aGenes1.setNewValue (i, aGenes0.getOldValue (i));
     }
 
-    final IChromosome aNew0 = Chromosome.createGenesInt (aChromosomes[0], aGenes0.getNewGenes ());
-    final IChromosome aNew1 = Chromosome.createGenesInt (aChromosomes[1], aGenes1.getNewGenes ());
+    final IChromosome aNew0 = Chromosome.createGenesInt (aChromosomes[0], aGenes0.getAllNewGenes ());
+    final IChromosome aNew1 = Chromosome.createGenesInt (aChromosomes[1], aGenes1.getAllNewGenes ());
     return new IChromosome [] { aNew0, aNew1 };
   }
 }

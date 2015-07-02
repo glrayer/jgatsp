@@ -26,8 +26,8 @@ import javax.annotation.Nonnull;
 
 import com.helger.commons.CGlobal;
 import com.helger.commons.charset.CCharset;
-import com.helger.commons.io.IReadableResource;
-import com.helger.commons.io.streams.StreamUtils;
+import com.helger.commons.io.resource.IReadableResource;
+import com.helger.commons.io.stream.StreamHelper;
 import com.helger.commons.regex.RegExHelper;
 import com.helger.commons.string.StringParser;
 import com.helger.math.matrix.Matrix;
@@ -43,7 +43,7 @@ public abstract class AbstractFileBasedTSPRunner
   public static Matrix readTSPFromFile (@Nonnull final IReadableResource aRes, final boolean bRoundDistances)
   {
     // Read the file content
-    final List <String> aLines = StreamUtils.readStreamLines (aRes, CCharset.CHARSET_ISO_8859_1_OBJ);
+    final List <String> aLines = StreamHelper.readStreamLines (aRes, CCharset.CHARSET_ISO_8859_1_OBJ);
 
     // Read all params
     final Map <String, String> aParams = new HashMap <String, String> ();

@@ -19,7 +19,7 @@ package com.helger.genetic.continuation;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.helger.commons.annotations.OverrideOnDemand;
+import com.helger.commons.annotation.OverrideOnDemand;
 import com.helger.genetic.IContinuation;
 import com.helger.genetic.model.IPopulation;
 

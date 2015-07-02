@@ -16,23 +16,12 @@
  */
 package com.helger.genetic.model;
 
-import javax.annotation.Nonnull;
+import com.helger.commons.compare.AbstractDoubleComparator;
 
-import com.helger.commons.compare.AbstractNumericComparator;
-import com.helger.commons.compare.ESortOrder;
-
-public final class ComparatorChromosomeFitness extends AbstractNumericComparator <IChromosome>
+public class ComparatorChromosomeFitness extends AbstractDoubleComparator <IChromosome>
 {
-  public ComparatorChromosomeFitness ()
-  {}
-
-  public ComparatorChromosomeFitness (@Nonnull final ESortOrder eSortOrder)
-  {
-    super (eSortOrder);
-  }
-
   @Override
-  protected double asDouble (final IChromosome aObject)
+  protected double getAsDouble (final IChromosome aObject)
   {
     return aObject.getFitness ();
   }

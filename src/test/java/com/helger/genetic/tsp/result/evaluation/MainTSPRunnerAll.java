@@ -335,7 +335,7 @@ public final class MainTSPRunnerAll extends AbstractFileBasedTSPRunner
 
       for (final Map.Entry <String, Class <? extends IMutation>> aEntryM : mm.entrySet ())
       {
-        final StopWatch aSW = new StopWatch (true);
+        final StopWatch aSW = StopWatch.createdStarted ();
         System.out.println ("  " + aEntryM.getKey ());
         final Class <? extends IMutation> aMutationClass = aEntryM.getValue ();
 

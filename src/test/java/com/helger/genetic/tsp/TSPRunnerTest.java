@@ -23,12 +23,12 @@ import javax.annotation.Nonnull;
 
 import org.junit.Test;
 
-import com.helger.commons.collections.CollectionHelper;
+import com.helger.commons.collection.CollectionHelper;
 import com.helger.genetic.tsp.model.TSPFitnessFunction;
 import com.helger.genetic.tsp.mutation.TSPMutationGreedy;
-import com.helger.math.graph.IGraph;
-import com.helger.math.graph.IGraphNode;
-import com.helger.math.graph.IGraphRelation;
+import com.helger.math.graph.IMutableGraph;
+import com.helger.math.graph.IMutableGraphNode;
+import com.helger.math.graph.IMutableGraphRelation;
 import com.helger.math.graph.simple.SimpleGraph;
 import com.helger.math.matrix.Matrix;
 
@@ -37,18 +37,18 @@ public final class TSPRunnerTest
   private static final String ATTR_COST = "distance";
 
   @Nonnull
-  private static Matrix _createDistanceMatrix (@Nonnull final IGraph aGraph)
+  private static Matrix _createDistanceMatrix (@Nonnull final IMutableGraph aGraph)
   {
-    final List <IGraphNode> aNodes = CollectionHelper.newList (aGraph.getAllNodes ().values ());
+    final List <IMutableGraphNode> aNodes = CollectionHelper.newList (aGraph.getAllNodes ().values ());
     final int nCities = aNodes.size ();
     final Matrix aMatrix = new Matrix (nCities, nCities);
     for (int nRow = 0; nRow < nCities; ++nRow)
     {
-      final IGraphNode aRowNode = aNodes.get (nRow);
+      final IMutableGraphNode aRowNode = aNodes.get (nRow);
       for (int nCol = 0; nCol < nCities; ++nCol)
         if (nRow != nCol)
         {
-          final IGraphRelation aRel = aRowNode.getRelation (aNodes.get (nCol));
+          final IMutableGraphRelation aRel = aRowNode.getRelation (aNodes.get (nCol));
           final int nDistance = aRel.getAttributeAsInt (ATTR_COST);
           aMatrix.set (nRow, nCol, nDistance);
           aMatrix.set (nCol, nRow, nDistance);
